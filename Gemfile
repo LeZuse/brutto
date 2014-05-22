@@ -19,7 +19,7 @@ gem 'activeresource', '~> 4.0.0'
 
 group :development do
   gem 'guard-rspec'
-  gem 'mailcatcher'
+  #gem 'mailcatcher'
   gem 'spring'
   gem 'quiet_assets', '~> 1.0.2'
   gem 'rails-dev-tweaks', '~> 1.1.0'
