@@ -37,9 +37,29 @@ Rails.application.configure do
 
   config.action_controller.action_on_unpermitted_parameters = :raise
 
-  config.action_mailer.delivery_method = :smtp
+  # Gem rails-dev-tweaks
+  config.dev_tweaks.log_autoload_notice = false
+  config.dev_tweaks.autoload_rules do
+    keep :all
 
-  config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+    skip '/favicon.ico'
+    skip :assets
+    keep :forced
+  end
 
-  config.action_mailer.default_url_options = { host: 'brutto.dev' }
+  # Bullet
+  if defined? Bullet
+    config.after_initialize do
+      Bullet.enable = true
+      if ENV['GROWL_ENABLED'] == '1'
+        Bullet.growl = { quiet: true }
+      end
+      Bullet.bullet_logger = true
+      Bullet.console = true
+      Bullet.rails_logger = false
+    end
+  end
+
+  # I18n debugging
+  I18nLogger = ActiveSupport::Logger.new(Rails.root.join('log/i18n.log'))
 end

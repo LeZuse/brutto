@@ -22,6 +22,7 @@ group :development do
   gem 'mailcatcher'
   gem 'spring'
   gem 'quiet_assets', '~> 1.0.2'
+  gem 'rails-dev-tweaks', '~> 1.1.0'
 
   # Deployment
   gem 'capistrano', '~> 3.0.0'
