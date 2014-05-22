@@ -12,6 +12,7 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
+  config.action_controller.action_on_unpermitted_parameters = :raise
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -32,10 +33,8 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_controller.action_on_unpermitted_parameters = :raise
   # # ActionMailer
   # config.action_mailer.raise_delivery_errors = false # Don't care if the mailer can't send.
-  # config.action_controller.action_on_unpermitted_parameters = :raise
   # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
   # config.action_mailer.default_url_options = { host: 'brutto.dev' }
