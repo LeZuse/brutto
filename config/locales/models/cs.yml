@@ -1,0 +1,11 @@
+cs:
+  activerecord:
+    attributes:
+      user:
+        remember_me: Zapamatovat přihlášení
+
+  simple_form:
+    placeholders:
+      user:
+        email: 'Email'
+        password: 'Heslo'
