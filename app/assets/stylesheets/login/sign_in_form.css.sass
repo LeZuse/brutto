@@ -1,0 +1,28 @@
+.sign_in_form
+  max-width: 350px
+  margin: 0 auto
+
+  .form-control
+    padding: 10px
+    box-sizing: border-box
+    font-size: 120%
+    height: auto
+    position: relative
+    &:focus
+      z-index: 2
+
+  .email
+    border-bottom-left-radius: 0px
+    border-bottom-right-radius: 0px
+    margin-bottom: -1px
+
+  .password
+    border-top-left-radius: 0px
+    border-top-right-radius: 0px
+
+  input[type=submit]
+    @extend .btn-primary
+    @extend .btn-block
+    @extend .btn-lg
+
+    margin-bottom: 20px

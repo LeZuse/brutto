@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= page_title
+    meta charset="utf-8"
+    = stylesheet_link_tag :login, media: 'all'
+    = csrf_meta_tags
+
+  body#login
+    #content
+      = render 'application/flashes'
+      = yield
