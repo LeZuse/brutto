@@ -10,5 +10,6 @@ cs:
   simple_form:
     placeholders:
       user:
+        agenda: 'Agenda'
         email: 'Email'
         password: 'Heslo'
