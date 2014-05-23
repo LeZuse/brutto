@@ -1,5 +1,8 @@
 cs:
   activerecord:
+    models:
+      agenda: BillApp agenda
+
     attributes:
       user:
         remember_me: Zapamatovat přihlášení
