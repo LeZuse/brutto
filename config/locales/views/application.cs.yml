@@ -1,0 +1,4 @@
+cs:
+  application:
+    header:
+      logout: odhlásit se

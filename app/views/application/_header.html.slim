@@ -1,0 +1,11 @@
+header
+  .container
+    #agenda
+      strong
+        => Agenda.model_name.human
+        b = current_user.agenda.name
+
+    #logged_in_user
+      i.user-icon
+      strong => current_user.name
+      = link_to t('application.header.logout'), destroy_user_session_path

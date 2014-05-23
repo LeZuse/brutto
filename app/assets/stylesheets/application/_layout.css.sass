@@ -1,2 +1,26 @@
 body#brutto_app #content
   @include container()
+
+header
+  @extend .navbar
+  @extend .navbar-inverse
+  @extend .navbar-static-top
+
+  .container
+    @include container()
+
+  #agenda
+    @extend .navbar-header
+
+    strong
+      @extend .navbar-brand
+      font-weight: normal
+
+  #logged_in_user
+    @extend .navbar-nav
+    @extend .navbar-right
+    @extend .navbar-text
+
+    a
+      @extend .navbar-link
+

@@ -7,6 +7,8 @@ html
     = csrf_meta_tags
 
   body#brutto_app
+    = render 'application/header'
+
     #content
       = render 'application/flashes'
       = yield
