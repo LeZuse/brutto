@@ -1,5 +1,6 @@
-#flashes
-  - flash.each do |key, value| 
-    .flash class="flash-#{ key }"
-      = value
+- if flash.present?
+  #flashes
+    - flash.each do |key, value|
+      .flash class="flash-#{ key }"
+        = value
 
