@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :invoices, only: [:index, :show] do
     collection { put :synchronize }
+
+    resources :lines, controller: 'invoice_lines'
   end
 
   root to: 'root#index'
