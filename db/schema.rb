@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523210058) do
+ActiveRecord::Schema.define(version: 20140524001643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,13 +25,15 @@ ActiveRecord::Schema.define(version: 20140523210058) do
   add_index "agendas", ["name"], name: "index_agendas_on_name", unique: true, using: :btree
 
   create_table "invoice_lines", force: true do |t|
-    t.integer  "invoice_id", null: false
-    t.decimal  "quantity",   null: false
-    t.decimal  "unit_price", null: false
-    t.decimal  "vat",        null: false
+    t.integer  "invoice_id",  null: false
+    t.decimal  "quantity",    null: false
+    t.decimal  "unit_price",  null: false
+    t.decimal  "vat",         null: false
     t.decimal  "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_id"
+    t.string   "description"
   end
 
   create_table "invoices", force: true do |t|
@@ -45,6 +47,8 @@ ActiveRecord::Schema.define(version: 20140523210058) do
     t.integer  "total_amount"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "number",              null: false
+    t.boolean  "has_vat",             null: false
   end
 
   add_index "invoices", ["original_created_at"], name: "index_invoices_on_original_created_at", using: :btree
