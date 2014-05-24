@@ -1,0 +1,22 @@
+.invoices
+  h1= Invoice.model_name.human(count: 2)
+
+  = link_to t('invoices.actions.synchronize'),
+            synchronize_invoices_path,
+            method: :put,
+            class: 'btn btn-warning btn-lg'
+
+  - if @invoices.present?
+    table
+      thead
+        tr
+          th= invoice_attribute :number
+          th= invoice_attribute :issue_date
+          th= invoice_attribute :lines
+
+      tbody
+        = render partial: 'invoice', collection: @invoices
+
+  - else
+    .no-records
+      = t('invoices.message.no_records')

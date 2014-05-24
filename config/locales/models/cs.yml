@@ -2,6 +2,9 @@ cs:
   activerecord:
     models:
       agenda: BillApp agenda
+      invoice:
+        one: Faktura
+        other: Faktury
 
     attributes:
       user:

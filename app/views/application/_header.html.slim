@@ -5,6 +5,10 @@ header
         => Agenda.model_name.human
         b = current_user.agenda.name
 
+    ul
+      li= link_to Invoice.model_name.human(count: 2), invoices_path
+
+
     #logged_in_user
       i.user-icon
       strong => current_user.name

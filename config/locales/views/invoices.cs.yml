@@ -1,0 +1,9 @@
+cs:
+  invoices:
+
+    messages:
+      were_synchronized: Faktury byly synchronizovány s BillApp
+      no_records: Nebyly nalezeny žádné faktury
+
+    actions:
+      synchronize: Synchronizovat s BillApp
