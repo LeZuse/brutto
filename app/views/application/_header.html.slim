@@ -8,4 +8,4 @@ header
     #logged_in_user
       i.user-icon
       strong => current_user.name
-      = link_to t('application.header.logout'), destroy_user_session_path
+      = link_to t('application.header.logout'), destroy_user_session_path, method: :delete
