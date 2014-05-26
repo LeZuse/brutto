@@ -13,7 +13,8 @@ class InvoicesController < ApplicationController
   end
 
   def update
-    invoice.update_lines(params.require(:invoice).fetch(:lines))
+    invoice.update_line_costs(params.require(:invoice).fetch(:lines))
+
     redirect_to :back,
                 notice: t('invoices.messages.lines_updated')
   end
