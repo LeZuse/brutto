@@ -1,20 +1,33 @@
 jQuery ->
-  $('.invoices .lines').each ->
-    $lines = $(this)
-    $submitBtn = $lines.find('.submit [type=submit]')
-    $costEditForms = $lines.find('.cost-edit')
-    $costShow = $lines.find('.cost-show')
+  if $('.invoices').length
+    $('.invoices .show_lines').each ->
+      $showLinesBtn = $(this)
+      $detail = $showLinesBtn.siblings('.detail')
 
-    # Unobtrussive JS - hide only with JS, not by CSS
-    $submitBtn.hide()
-    $costEditForms.hide()
-    $costShow.removeClass('hidden')
+      $showLinesBtn.removeClass('hidden')
+      $detail.hide()
 
-    $toggleEditBtn = $('<span class="btn btn-default">Upravit náklady</span>').insertBefore($submitBtn)
+      $showLinesBtn.on 'click', ->
+        $showLinesBtn.hide()
+        $detail.fadeIn()
 
-    $toggleEditBtn.on 'click', ->
-      $toggleEditBtn.hide()
-      $costShow.hide()
-      $costEditForms.fadeIn()
-      $submitBtn.fadeIn()
+    $('.invoices .lines').each ->
+      $lines = $(this)
+      $submitBtn = $lines.find('.submit [type=submit]')
+      $costEditForms = $lines.find('.cost-edit')
+      $costShow = $lines.find('.cost-show')
+
+      # Unobtrussive JS - hide only with JS, not by CSS
+      $submitBtn.hide()
+      $costEditForms.hide()
+      $costShow.removeClass('hidden')
+
+      $toggleEditBtn = $('<span class="btn btn-default">Upravit náklady</span>')
+        .insertBefore($submitBtn)
+
+      $toggleEditBtn.on 'click', ->
+        $toggleEditBtn.hide()
+        $costShow.hide()
+        $costEditForms.fadeIn()
+        $submitBtn.fadeIn()
 

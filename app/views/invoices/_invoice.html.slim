@@ -6,14 +6,19 @@ tr class=invoice.row_class
     = l invoice.issue_date
 
   td.lines
-    = simple_form_for invoice do |invoice_form|
+    .detail
+      = simple_form_for invoice do |invoice_form|
 
-      = render 'invoice_lines', invoice_lines: invoice.lines, invoice_form: invoice_form
+        = render 'invoice_lines', invoice_lines: invoice.lines, invoice_form: invoice_form
 
-      .submit
-        = invoice_form.button :submit,
-                              class: 'btn-primary',
-                              data: {loading_text: t('application.buttons.form_submited_button_text')}
+        .submit
+          = invoice_form.button :submit,
+                                class: 'btn-primary',
+                                data: {loading_text: t('application.buttons.form_submited_button_text')}
+
+    .show_lines.hidden
+      = t('invoices.actions.show_lines')
+      span.line_count<= invoice.lines.count
 
   td.number
     = number_to_currency invoice.total_profit
