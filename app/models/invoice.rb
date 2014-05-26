@@ -14,15 +14,18 @@ class Invoice < ActiveRecord::Base
   scope :with_profit, -> {
     total_profit_sum = InvoiceLine.total_profit_col.sum
 
-    select(arel_table[Arel.star], total_profit_sum.as('total_profit')).
-        joins(:lines).
-        group(arel_table[:id])
+    joins(:lines).
+        group(arel_table[:id]).
+        select arel_table[Arel.star],
+               total_profit_sum.as('total_profit')
   }
 
   scope :with_totals, -> {
     joins(:lines).
       group(arel_table[:id]).
-      select(InvoiceLine.total_amount.sum.as('total_amount'), InvoiceLine.tax_amount.sum.as('tax_amount'))
+      select arel_table[Arel.star],
+             InvoiceLine.total_amount_col.sum.as('total_amount'),
+             InvoiceLine.total_tax_amount_col.sum.as('tax_amount')
   }
 
   # Instance method
