@@ -16,7 +16,7 @@
           th Zisk
 
       tbody
-        = render partial: 'invoice', collection: @invoices
+        = render partial: 'invoice', collection: present_collection(@invoices)
 
   - else
     .no-records
