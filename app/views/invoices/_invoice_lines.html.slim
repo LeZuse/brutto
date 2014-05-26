@@ -5,9 +5,10 @@ table
       th Prodejní cena/ks
       th Počet
       th Náklad/ks
+      th Zisk
 
   tbody
-    - for invoice_line in invoice_lines
+    - present_collection invoice_lines do |invoice_line|
       tr class=[invoice_line.cost.nil? && 'cost-not-filled']
         td
           = invoice_line.description
@@ -18,9 +19,9 @@ table
         td.number
           = invoice_line.quantity
 
-        td
+        td.cost.number
           .cost-edit
-            = invoice_form.simple_fields_for 'lines[]', invoice_line do |lines_form|
+            = invoice_form.simple_fields_for 'lines[]', invoice_line.presented_object do |lines_form|
               = lines_form.input :cost,
                                  input_html: {class: 'input-sm'},
                                  label: false,
@@ -28,3 +29,6 @@ table
 
           .cost-show.hidden
             = number_to_currency invoice_line.cost
+
+        td.number
+          = invoice_line.total_profit

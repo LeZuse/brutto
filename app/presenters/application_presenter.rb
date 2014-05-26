@@ -3,6 +3,10 @@ class ApplicationPresenter
     @object = object
   end
 
+  def presented_object
+    @object
+  end
+
   def method_missing(*args, &block)
     @object.send(*args, &block)
   end

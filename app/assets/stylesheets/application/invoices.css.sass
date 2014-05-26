@@ -19,7 +19,7 @@
     table
       @extend .table-condensed
 
-      th:last-child, td:last-child
+      td.cost
         width: 150px
 
 
@@ -28,6 +28,9 @@
 
   .submit
     text-align: right
+
+  .no-cost-filled-in
+    @extend .warning
 
   .show-lines
     @extend .btn, .btn-default
