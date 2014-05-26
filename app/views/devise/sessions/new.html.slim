@@ -9,6 +9,8 @@
 
     = f.input :remember_me, as: :boolean, wrapper: :horizontal_boolean if devise_mapping.rememberable?
 
-    = f.button :submit, t('devise.sessions.sign_in')
+    = f.button :submit,
+               t('devise.sessions.sign_in'),
+               data: {loading_text: t('login.buttons.login_submited_button_text')}
     = " #{t('devise.sessions.or')} "
     = link_to t('devise.sessions.sign_up'), 'https://registrace.billapp.cz/'
