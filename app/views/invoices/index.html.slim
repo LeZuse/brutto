@@ -12,7 +12,7 @@
         tr
           th= invoice_attribute :number
           th= invoice_attribute :issue_date
-          th= invoice_attribute :lines
+          th.lines= invoice_attribute :lines
 
       tbody
         = render partial: 'invoice', collection: @invoices

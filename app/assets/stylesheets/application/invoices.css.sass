@@ -2,9 +2,19 @@
   > table
     @extend .table-bordered
     @extend .table-hover
+    margin-top: 30px
+
+    th.lines, td.lines
+      width: 60%
 
   table
     @extend .table
 
     table
       @extend .table-condensed
+
+      th:last-child, td:last-child
+        max-width: 150px
+
+      .cost-not-filled
+        @extend .warning
