@@ -11,4 +11,6 @@ tr
       = render 'invoice_lines', invoice_lines: invoice.lines, invoice_form: invoice_form
 
       .submit
-        = invoice_form.button :submit, data: {loading_text: t('application.buttons.form_submited_button_text')}
+        = invoice_form.button :submit,
+                              class: 'btn-primary',
+                              data: {loading_text: t('application.buttons.form_submited_button_text')}
