@@ -8,7 +8,7 @@ class Invoice < ActiveRecord::Base
   # Scopes
   # ======
   default_scope -> {
-    order(issue_date: :desc)
+    order(issue_date: :desc, number: :desc)
   }
 
   scope :with_profit, -> {
