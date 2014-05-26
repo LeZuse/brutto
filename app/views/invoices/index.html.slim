@@ -13,10 +13,11 @@
           th= invoice_attribute :number
           th= invoice_attribute :issue_date
           th.lines= invoice_attribute :lines
+          th Zisk
 
       tbody
         = render partial: 'invoice', collection: @invoices
 
   - else
     .no-records
-      = t('invoices.message.no_records')
+      = t('invoices.texts.no_records')

@@ -3,6 +3,9 @@ cs:
 
     messages:
       were_synchronized: Faktury byly synchronizovány s BillApp
+      lines_updated: Náklady na položky byly upraveny
+
+    texts:
       no_records: Nebyly nalezeny žádné faktury
 
     actions:
