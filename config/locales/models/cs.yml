@@ -10,6 +10,11 @@ cs:
       user:
         remember_me: Zapamatovat přihlášení
 
+      invoice:
+        number: Číslo faktury
+        issue_date: Datum vydání
+        lines: Položky
+
   simple_form:
     placeholders:
       user:
