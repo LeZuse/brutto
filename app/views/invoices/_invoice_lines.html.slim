@@ -9,13 +9,22 @@ table
   tbody
     - for invoice_line in invoice_lines
       tr class=[invoice_line.cost.nil? && 'cost-not-filled']
-        td= invoice_line.description
-        td.number= number_to_currency invoice_line.unit_price
-        td.number= invoice_line.quantity
+        td
+          = invoice_line.description
+
+        td.number
+          = number_to_currency invoice_line.unit_price
+
+        td.number
+          = invoice_line.quantity
+
         td
           .cost-edit
             = invoice_form.simple_fields_for 'lines[]', invoice_line do |lines_form|
-              = lines_form.input :cost, label: false, wrapper: false
+              = lines_form.input :cost,
+                                 input_html: {class: 'input-sm'},
+                                 label: false,
+                                 wrapper: false
 
           .cost-show.hidden
             = number_to_currency invoice_line.cost
