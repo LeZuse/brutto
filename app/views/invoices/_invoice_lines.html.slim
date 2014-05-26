@@ -10,8 +10,8 @@ table
     - for invoice_line in invoice_lines
       tr class=[invoice_line.cost.nil? && 'cost-not-filled']
         td= invoice_line.description
-        td= number_to_currency invoice_line.unit_price
-        td= invoice_line.quantity
+        td.number= number_to_currency invoice_line.unit_price
+        td.number= invoice_line.quantity
         td
           .cost-edit
             = invoice_form.simple_fields_for 'lines[]', invoice_line do |lines_form|
