@@ -1,6 +1,6 @@
 jQuery ->
   if $('.invoices').length
-    $('.invoices .show_lines').each ->
+    $('.invoices .show-lines').each ->
       $showLinesBtn = $(this)
       $detail = $showLinesBtn.siblings('.detail')
 

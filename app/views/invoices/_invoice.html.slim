@@ -16,9 +16,9 @@ tr class=invoice.row_class
                                 class: 'btn-primary',
                                 data: {loading_text: t('application.buttons.form_submited_button_text')}
 
-    .show_lines.hidden
+    .show-lines.hidden
       = t('invoices.actions.show_lines')
-      span.line_count<= invoice.lines.count
+      span.line-count<= invoice.lines.count
 
   td.number
     = number_to_currency invoice.tax_amount
