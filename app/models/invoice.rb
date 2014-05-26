@@ -5,6 +5,20 @@ class Invoice < ActiveRecord::Base
            class_name: 'InvoiceLine',
            autosave: true
 
+  # Scopes
+  # ======
+  default_scope -> {
+    order(issue_date: :desc)
+  }
+
+  scope :with_profit, -> {
+    total_profit_sum = InvoiceLine.total_profit_col.sum
+
+    select(arel_table[Arel.star], total_profit_sum.as('total_profit')).
+        joins(:lines).
+        group(arel_table[:id])
+  }
+
   # Instance method
   # ===============
   def update_line_costs(line_params)
