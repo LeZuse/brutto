@@ -7,3 +7,8 @@ cs:
 
     actions:
       synchronize: Synchronizovat s BillApp
+
+
+  root:
+    texts:
+      app_name_heading: BillApp Brutto
