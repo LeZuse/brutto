@@ -5,8 +5,10 @@ class InvoiceSynchronizationService
   end
 
   def synchronize
-    remote_invoices.each do |invoice|
-      synchronize_invoice(invoice)
+    Invoice.transaction do
+      remote_invoices.each do |invoice|
+        synchronize_invoice(invoice)
+      end
     end
   end
 
