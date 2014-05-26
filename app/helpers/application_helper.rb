@@ -3,7 +3,7 @@ module ApplicationHelper
     yield presenter_for(object)
   end
 
-  def present_collection(collection)
+  def present_collection(collection, &block)
     presenters = collection.map { |member| presenter_for(member) }
 
     if block_given?
