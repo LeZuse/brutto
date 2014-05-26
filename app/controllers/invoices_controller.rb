@@ -1,6 +1,8 @@
 class InvoicesController < ApplicationController
   def index
-    @invoices = Invoice.with_profit
+    @invoices = Invoice.
+        with_totals.
+        with_profit
   end
 
   def synchronize

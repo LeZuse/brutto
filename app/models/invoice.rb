@@ -19,6 +19,12 @@ class Invoice < ActiveRecord::Base
         group(arel_table[:id])
   }
 
+  scope :with_totals, -> {
+    joins(:lines).
+      group(arel_table[:id]).
+      select(InvoiceLine.total_amount.sum.as('total_amount'), InvoiceLine.tax_amount.sum.as('tax_amount'))
+  }
+
   # Instance method
   # ===============
   def update_line_costs(line_params)

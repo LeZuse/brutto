@@ -10,5 +10,13 @@ class InvoiceLine < ActiveRecord::Base
     def total_profit_col
       arel_table[:quantity] * Arel::Nodes::Grouping.new(profit_col)
     end
+
+    def total_amount
+      arel_table[:quantity] * arel_table[:unit_price]
+    end
+
+    def tax_amount
+      arel_table[:quantity] * arel_table[:vat]
+    end
   end
 end
