@@ -16,3 +16,8 @@ cs:
         agenda: 'Agenda'
         email: 'Email'
         password: 'Heslo'
+
+  helpers:
+    submit:
+      invoice:
+        update: Upravit fakturu

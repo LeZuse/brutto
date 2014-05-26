@@ -2,3 +2,6 @@ cs:
   application:
     header:
       logout: odhlásit se
+
+    buttons:
+      form_submited_button_text: Ukládám...

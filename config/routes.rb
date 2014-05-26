@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users,
              controllers: { sessions: 'sessions' }
 
-  resources :invoices, only: [:index, :show] do
+  resources :invoices, only: [:index, :show, :update] do
     collection { put :synchronize }
 
     resources :lines, controller: 'invoice_lines'

@@ -1,4 +1,8 @@
 tr
   th= invoice.number
-  th= invoice.issue_date
-  th= link_to invoice_lines_path(invoice)
+  td= invoice.issue_date
+  td
+    = simple_form_for invoice do |invoice_form|
+      = render 'invoice_lines', invoice_lines: invoice.lines, invoice_form: invoice_form
+      .text-right
+        = invoice_form.button :submit, data: {loading_text: t('application.buttons.form_submited_button_text')}
