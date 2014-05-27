@@ -61,4 +61,5 @@ group :test do
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'capybara-screenshot'
+  gem 'fakeweb', '~> 1.3'
 end
