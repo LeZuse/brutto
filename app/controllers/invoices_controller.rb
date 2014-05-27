@@ -2,7 +2,8 @@ class InvoicesController < ApplicationController
   def index
     @invoices = Invoice.
         with_totals.
-        with_profit
+        with_profit.
+        preload(:lines)
   end
 
   def synchronize
