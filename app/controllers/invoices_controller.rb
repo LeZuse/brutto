@@ -7,7 +7,7 @@ class InvoicesController < ApplicationController
 
   def synchronize
     InvoiceSynchronizationService.
-        new(current_user, session[:bill_app_api_password]).
+        new(current_user, bill_app_password).
         synchronize
 
     redirect_to invoices_url,
@@ -26,5 +26,9 @@ private
 
   def invoice
     @invoice ||= Invoice.find(params[:id])
+  end
+
+  def bill_app_password
+    session[:bill_app_api_password]
   end
 end
