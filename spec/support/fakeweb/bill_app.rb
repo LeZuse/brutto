@@ -19,4 +19,8 @@ private
   end
 end
 
+# Disallow all request by default
 FakeWeb.allow_net_connect = false
+
+# Allow localhost requests - for Poltergeist
+FakeWeb.allow_net_connect = %r[^https?://127\.0\.0\.1]

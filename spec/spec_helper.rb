@@ -38,8 +38,6 @@ RSpec.configure do |config|
     Capybara::Poltergeist::Driver.new app, window_size: [1280, 1024]
   end
 
-  #Capybara.default_driver = :poltergeist
-
   # Automatic screenshots
   require 'capybara-screenshot/rspec'
 
@@ -49,4 +47,3 @@ RSpec.configure do |config|
 end
 
 Capybara.javascript_driver = :poltergeist
-
