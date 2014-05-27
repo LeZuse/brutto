@@ -22,6 +22,10 @@ RSpec.configure do |config|
   config.order = 'random'
   config.use_transactional_fixtures = false
 
+  # ActiveResource mocks
+  require 'support/fakeweb/bill_app'
+  config.include BillAppMock
+
   # Capybara
   # ========
 

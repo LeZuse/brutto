@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Date: Tue, 27 May 2014 11:40:55 GMT
+Server: Apache
+X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 3.0.17
+X-Runtime: 7
+ETag: "ae81dd2ac90a685e51eea50a15f055a9"
+Cache-Control: private, max-age=0, must-revalidate
+Set-Cookie: _blueberry_cash_session=BAh7BjoPc2Vzc2lvbl9pZCIlYWZjY2E0YmUwNWU2NTI0MDM1NWNjOTIzZDcyOTQ5MDU%3D--7f1aedf2e6e28b3b88b04b7d73db05044b100859; domain=.billapp.cz; path=/; HttpOnly
+Content-Length: 244
+Status: 200
+Content-Type: application/json; charset=utf-8
+
+[{"user":{"created_at":"2014-05-22T08:44:12+02:00","email":"xeedus@gmail.com","id":1939,"last_login_at":"2014-05-22T08:45:19+02:00","logins_count":1,"name":"Luk\u00e1\u0161 Voda","role":"agenda_admin","updated_at":"2014-05-22T08:45:33+02:00"}}]

@@ -9,16 +9,11 @@ describe 'InvoicesController' do
   end
 
   describe 'PUT /' do
-    let(:invoices) {
-      
-    }
+    let(:user) { create(:user) }
 
     before do
-      login_as create(:user)
-
-      invoices_resource = double("invoices", all: OpenStruct.new)
-
-      allow(BillApp::ResourceFactory).to receive(:resource_for) { invoices_resource }
+      login_as user
+      bill_app_api_mock 'invoices'
     end
 
     it 'fetches invoices from BillApp' do
