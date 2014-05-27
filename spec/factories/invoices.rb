@@ -7,7 +7,5 @@ FactoryGirl.define do
     currency "MyString"
     issue_date "2014-05-22"
     paid_on "2014-05-22"
-    tax_amount "9.99"
-    total_amount 1
   end
 end

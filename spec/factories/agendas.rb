@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :agenda do
-    name "MyString"
+    name 'XeeD'
   end
 end
