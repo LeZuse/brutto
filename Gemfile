@@ -59,4 +59,5 @@ group :test do
   gem 'poltergeist', '>= 1.4.0'
   gem 'database_cleaner'
   gem 'simplecov', require: false
+  gem 'capybara-screenshot'
 end
