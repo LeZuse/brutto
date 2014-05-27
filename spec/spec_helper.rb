@@ -21,6 +21,27 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   config.order = 'random'
   config.use_transactional_fixtures = false
+
+  # Capybara
+  # ========
+
+  # DSL for tests
+  config.include Capybara::DSL
+
+  # Webkit with Poltergeist/PhantomJS
+  require 'capybara/poltergeist'
+  Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new app, window_size: [1280, 1024]
+  end
+
+  #Capybara.default_driver = :poltergeist
+
+  # Automatic screenshots
+  require 'capybara-screenshot/rspec'
+
+  # User sign in
+  config.include Warden::Test::Helpers
+  Warden.test_mode!
 end
 
 Capybara.javascript_driver = :poltergeist
