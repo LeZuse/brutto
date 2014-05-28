@@ -8,7 +8,8 @@ module Devise
       def authenticate!
         user = find_or_create_user
         remote_user = self.find_remote_user(user)
-        user.update_attribute(:name, remote_user.name)
+        user.update_attributes name: remote_user.name,
+                               bill_app_id: remote_user.id
 
         save_password_to_session
 

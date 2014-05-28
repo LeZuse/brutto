@@ -5,10 +5,16 @@ class Invoice < ActiveRecord::Base
            class_name: 'InvoiceLine',
            autosave: true
 
+  belongs_to :agenda
+
   # Scopes
   # ======
   default_scope -> {
     order(issue_date: :desc, number: :desc)
+  }
+
+  scope :from_agenda, ->(agenda_id) {
+    where agenda_id: agenda_id
   }
 
   scope :with_profit, -> {

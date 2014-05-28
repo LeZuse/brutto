@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
   def index
-    @invoices = Invoice.
+    @invoices = invoices.
         with_totals.
         with_profit.
         preload(:lines)
@@ -26,10 +26,14 @@ class InvoicesController < ApplicationController
 private
 
   def invoice
-    @invoice ||= Invoice.find(params[:id])
+    @invoice ||= invoices.find(params[:id])
   end
 
   def bill_app_password
     session[:bill_app_api_password]
+  end
+
+  def invoices
+    Invoice.from_agenda(current_agenda.id)
   end
 end

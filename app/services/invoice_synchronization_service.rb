@@ -1,6 +1,6 @@
 class InvoiceSynchronizationService
   def initialize(user, password)
-    @user = user
+    @agenda = user.agenda
     @resource = BillApp::ResourceFactory.resource_for(user, password, 'invoice')
   end
 
@@ -15,7 +15,7 @@ class InvoiceSynchronizationService
 
   private
 
-  attr_reader :resource, :user
+  attr_reader :resource, :agenda
 
   def remote_invoices
     resource.all
@@ -24,7 +24,7 @@ class InvoiceSynchronizationService
   def synchronize_invoice(bill_app_invoice)
     invoice = Invoice.find_or_initialize_by(id: bill_app_invoice.id)
 
-    invoice.assign_attributes user_id: user.id,
+    invoice.assign_attributes agenda_id: agenda.id,
                               original_created_at: bill_app_invoice.created_at,
                               original_updated_at: bill_app_invoice.updated_at,
                               number: bill_app_invoice.number,

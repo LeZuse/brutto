@@ -4,4 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :authenticate_user!
+
+private
+
+  def current_agenda
+    current_user.agenda
+  end
 end
