@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528174336) do
+ActiveRecord::Schema.define(version: 20140528215625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140528174336) do
     t.date     "paid_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "number",                          null: false
+    t.string   "number",                          null: false
     t.boolean  "has_vat",                         null: false
     t.integer  "agenda_id",           default: 0, null: false
   end
