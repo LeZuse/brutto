@@ -10,7 +10,7 @@ class Invoice < ActiveRecord::Base
   # Scopes
   # ======
   default_scope -> {
-    order(issue_date: :desc, number: :desc)
+    order issue_date: :desc, number: :desc
   }
 
   scope :from_agenda, ->(agenda_id) {
