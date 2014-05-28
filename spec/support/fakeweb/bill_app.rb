@@ -15,7 +15,7 @@ private
   end
 
   def api_endpoint(element_name)
-    "https://xeedus%40gmail.com@xeed.billapp.cz/#{element_name}.json"
+    %r[https://.+@.+\.billapp\.cz/#{element_name}\.json]
   end
 end
 
