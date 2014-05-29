@@ -1,1 +1,5 @@
-h1= t('root.texts.app_name_heading')
+.root
+  h1= t('root.texts.app_name_heading')
+
+  ul
+    li= link_to Invoice.model_name.human(count: 2), invoices_path
