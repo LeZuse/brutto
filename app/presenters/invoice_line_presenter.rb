@@ -4,7 +4,7 @@ class InvoiceLinePresenter < ApplicationPresenter
   end
 
   def profit
-    unit_price_without_vat - cost
+    unit_price_without_vat - cost.to_i
   end
 
   def vat_amount
