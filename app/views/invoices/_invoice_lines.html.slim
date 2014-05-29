@@ -2,8 +2,8 @@ table
   thead
     tr
       th Název položky
-      th Prodejní cena/ks
       th Počet
+      th Prodejní cena/ks
       th Náklad/ks
       th Zisk
 
@@ -14,10 +14,10 @@ table
           = invoice_line.description
 
         td.number
-          = number_to_currency invoice_line.unit_price
+          = invoice_line.quantity
 
         td.number
-          = invoice_line.quantity
+          = number_to_currency invoice_line.unit_price
 
         td.cost.number
           .cost-edit
