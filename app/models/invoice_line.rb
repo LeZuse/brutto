@@ -3,13 +3,6 @@ class InvoiceLine < ActiveRecord::Base
   # ============
   belongs_to :invoice
 
-  # Scopes
-  # ======
-  scope :with_profit, -> {
-    order(:id).
-        select(arel_table[Arel.star], total_profit_col.as('total_profit'))
-  }
-
   # Class methods
   # =============
   class << self
