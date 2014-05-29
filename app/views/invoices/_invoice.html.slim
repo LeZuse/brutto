@@ -21,10 +21,13 @@ tr class=invoice.row_class
       span.line-count<= invoice.lines.size
 
   td.number
+    = number_to_currency invoice.total_amount
+
+  td.number
     = number_to_currency invoice.tax_amount
 
   td.number
-    = number_to_currency invoice.total_amount
+    = number_to_currency invoice.total_cost
 
   td.number
     = number_to_currency invoice.total_profit

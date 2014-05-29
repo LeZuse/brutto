@@ -31,7 +31,8 @@ class Invoice < ActiveRecord::Base
   scope :with_totals, -> {
     grouped_with_lines.select arel_table[Arel.star],
                               InvoiceLine.total_amount_col.sum.as('total_amount'),
-                              InvoiceLine.total_tax_amount_col.sum.as('tax_amount')
+                              InvoiceLine.total_tax_amount_col.sum.as('tax_amount'),
+                              InvoiceLine.total_cost_col.sum.as('total_cost')
   }
 
   # Instance method

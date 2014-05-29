@@ -18,6 +18,11 @@ class InvoiceLine < ActiveRecord::Base
       arel_table[:quantity] * arel_table[:unit_price]
     end
 
+    # quantity * cost
+    def total_cost_col
+      arel_table[:quantity] * arel_table[:cost]
+    end
+
     # [unit_price_without_vat] - cost
     # may require grouping when used as part of another calculation
     def profit_col
