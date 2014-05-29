@@ -9,7 +9,7 @@ table
 
   tbody
     - present_collection invoice_lines do |invoice_line|
-      tr class=[invoice_line.cost.nil? && 'cost-not-filled']
+      tr class=[invoice_line.cost.nil? && 'cost-not-filled' || '']
         td
           = invoice_line.description
 

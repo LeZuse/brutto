@@ -2,6 +2,7 @@ class Invoice < ActiveRecord::Base
   # Associations
   # ============
   has_many :lines,
+           -> { order :id },
            class_name: 'InvoiceLine',
            autosave: true
 

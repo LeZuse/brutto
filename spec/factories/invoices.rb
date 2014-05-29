@@ -8,5 +8,11 @@ FactoryGirl.define do
     issue_date '2014-05-22'
     paid_on '2014-05-22'
     agenda
+
+    trait :with_lines do
+      after(:create) do |i|
+        create_list(:invoice_line, rand(5), invoice: i)
+      end
+    end
   end
 end
