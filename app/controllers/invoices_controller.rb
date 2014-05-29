@@ -34,6 +34,6 @@ private
   end
 
   def invoices
-    Invoice.from_agenda(current_agenda.id)
+    current_user.invoices
   end
 end

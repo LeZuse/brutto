@@ -4,4 +4,10 @@ class User < ActiveRecord::Base
          :trackable
 
   belongs_to :agenda
+
+  has_many :invoices,
+           through: :agenda
+
+  validates :name,
+            presence: true
 end
