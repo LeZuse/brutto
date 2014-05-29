@@ -42,7 +42,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '>= 2.14'
+  gem 'rspec-rails', '~> 2.14'
 
   # Debugging
   gem 'pry-rails'
